@@ -2,7 +2,7 @@
  * @Author: w
  * @Date: 2020-09-03 16:31:19
  * @LastEditors: w
- * @LastEditTime: 2020-09-04 10:50:47
+ * @LastEditTime: 2020-09-04 11:24:40
  */
 self.version = '20190401235958'
 importScripts('https://cdn.jsdelivr.net/npm/workbox-sw@4.3.1/build/workbox-sw.min.js');
@@ -16,7 +16,11 @@ if (workbox) {
 
 var cacheFiles = [
   {
-    url: '../index.html',
+    url: 'index.html',
+    revision: 'v1' // 加revision，版本改了以後，sw.js 在 application 上會更新
+  },
+  {
+    url: 'manifest.json',
     revision: 'v1' // 加revision，版本改了以後，sw.js 在 application 上會更新
   },
   // {
